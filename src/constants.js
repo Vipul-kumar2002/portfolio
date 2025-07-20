@@ -1,0 +1,148 @@
+// Skills Section Logo's
+import htmlLogo from "./assets/tech_logo/html.jpg";
+import cssLogo from "./assets/tech_logo/css.jpg";
+import javascriptLogo from "./assets/tech_logo/javascript.jpg";
+import reactjsLogo from "./assets/tech_logo/reactjs.jpg";
+import tailwindcssLogo from "./assets/tech_logo/tailwindcss.jpg";
+import greenCart from "./assets/tech_logo/greenCart.jpg";
+import materialuiLogo from "./assets/tech_logo/materialui.jpg";
+import nodejsLogo from "./assets/tech_logo/nodejs.jpg";
+import expressjsLogo from "./assets/tech_logo/express.jpg";
+import mongodbLogo from "./assets/tech_logo/mongodb.jpg";
+import cppLogo from "./assets/tech_logo/cpp.jpg";
+import gitLogo from "./assets/tech_logo/git.jpg";
+import githubLogo from "./assets/tech_logo/github.png";
+import vscodeLogo from "./assets/tech_logo/vscode.jpg";
+import postmanLogo from "./assets/tech_logo/postman.jpg";
+import mcLogo from "./assets/tech_logo/mc.jpg";
+import vercelLogo from "./assets/tech_logo/verscel.jpg";
+import spotifyLogo1 from "./assets/tech_logo/spotifyLogo1.jpg";
+import Jrsu from "./assets/tech_logo/Jrsu.jpg";
+import koc1 from "./assets/tech_logo/koc1.jpg";
+import advv from "./assets/tech_logo/advv.jpg";
+import course from "./assets/tech_logo/course.jpg";
+import port from "./assets/tech_logo/port.jpg";
+import code from "./assets/tech_logo/code.jpg";
+
+export const SkillsInfo = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "HTML", logo: htmlLogo },
+      { name: "CSS", logo: cssLogo },
+
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "React JS", logo: reactjsLogo },
+
+      { name: "Tailwind CSS", logo: tailwindcssLogo },
+
+      { name: "Material UI", logo: materialuiLogo },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node JS", logo: nodejsLogo },
+      { name: "Express JS", logo: expressjsLogo },
+
+      { name: "MongoDB", logo: mongodbLogo },
+    ],
+  },
+  {
+    title: "Languages",
+    skills: [
+      { name: "C++", logo: cppLogo },
+
+      { name: "JavaScript", logo: javascriptLogo },
+    ],
+  },
+  {
+    title: "Tools",
+    skills: [
+      { name: "Git", logo: gitLogo },
+      { name: "GitHub", logo: githubLogo },
+      { name: "VS Code", logo: vscodeLogo },
+      { name: "Postman", logo: postmanLogo },
+      { name: "Compass", logo: mcLogo },
+      { name: "Vercel", logo: vercelLogo },
+    ],
+  },
+];
+
+export const projects = [
+  {
+    id: 0,
+    title: "Spotify",
+    description:
+      "A sleek and responsive music player built using HTML, CSS, and JavaScript. It allows users to play, pause, and navigate through a playlist of songs with intuitive controls. The player includes features like a dynamic progress bar, track name display, and play/pause toggle functionality. Designed with a modern UI for a smooth listening experience across all devices.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/Vipul-kumar2002/Spotify",
+    webApp: "https://spotify-phi-smoky.vercel.app/",
+    image: spotifyLogo1,
+  },
+  {
+    id: 1,
+    title: "Green Cart",
+    description:
+      "Green Cart is a full-stack grocery delivery web application inspired by Blinkit. It allows users to browse, search, and order groceries online with real-time cart management and seamless user experience. Built with the MERN stack (MongoDB, Express.js, React.js, Node.js), it features user authentication, product filtering by category, and a secure checkout system.",
+    tags: ["React JS", "Node.js", "MongoDB", "Express"],
+    github: "https://github.com/Vipul-kumar2002/greencart-deploy",
+    webApp: "https://greencart-deploy-fax2.vercel.app/",
+    image: greenCart,
+  },
+  {
+    id: 3,
+    title: "Course Selling App",
+    description:
+      "A full-featured course selling platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js). This web application enables instructors to upload and manage courses, while students can browse, preview, and purchase them. The platform includes secure authentication, dynamic content delivery, and intuitive user interfaces for both learners and creators.",
+    tags: ["React JS", "Node.js", "MongoDB", "Express"],
+    github: "https://github.com/Vipul-kumar2002/Bookstore",
+    webApp: "https://github.com/Vipul-kumar2002/Bookstore",
+    image: course,
+  },
+
+  {
+    id: 4,
+    title: "Portfolio",
+    description:
+      "A modern, responsive personal portfolio website built using React.js to showcase projects, skills, and experience. Designed with a sleek UI and smooth animations, the portfolio highlights key accomplishments and provides visitors with an interactive way to learn more about your work. It includes project previews, a contact form, and links to social profiles and GitHub.",
+    tags: ["React JS"],
+    github: "",
+    webApp: "",
+    image: port,
+  },
+  {
+    id: 5,
+    title: "Code-Review",
+    description:
+      "An AI-powered code review tool built using React, Node.js, and Express, with smart code analysis generated by Google's Gemini API. This app allows users to input code and get instant feedback on code quality, syntax issues, logic problems, and improvement suggestions — just like a personal senior developer reviewing your code.",
+    tags: ["React JS", "Node.js", "Express", "Gemini API"],
+    github: "https://github.com/Vipul-kumar2002/code-review",
+    webApp: "http://code-review-jet.vercel.app/",
+    image: code,
+  },
+];
+
+export const education = [
+  {
+    id: 0,
+    img: Jrsu,
+    Batch: "2021-24",
+    grade: "8.75 SGPA",
+    desc: "I have completed my Bachelor’s degree in Computer Applications and Cyber Security (BCACS) from Jharkhand Raksha Shakti University, Ranchi. During my academic journey, I built a strong foundation in core areas of computer science, including programming, database management, operating systems, and software engineering. I actively participated in seminars, workshops, and hands-on projects that helped enhance my technical skills and problem-solving abilities   ",
+  },
+  {
+    id: 1,
+    img: koc1,
+    Batch: "2018-2020",
+    grade: "71.6%",
+    desc: "I have completed my Intermediate education from Kartik Oraon Inter College, Ratu, Ranchi, under the Jharkhand Academic Council (JAC) board. I studied in the Science stream, gaining a solid foundation in subjects like Physics, Chemistry, Mathematics which strengthened my analytical and problem-solving skills.",
+  },
+  {
+    id: 2,
+    img: advv,
+    Batch: "2018",
+    grade: "71.40%",
+    desc: "I have completed my 10th standard from Adivasi Bal Vikas Vidyalaya, Ratu, Ranchi, Jharkhand. This foundational education helped me build essential academic skills and prepared me for higher studies.",
+  },
+];
