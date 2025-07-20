@@ -1,98 +1,140 @@
-import React from "react";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Footer = () => {
-  const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+const Contact = () => {
+  const form = useRef();
+  const [isSent, setIsSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_4nt7lk9", // ✅ Your EmailJS service ID
+        "template_gllh3qt", // ✅ Your template ID
+        form.current,
+        "UCAgThnArYKm4bxjr" // ✅ Your public key
+      )
+      .then(
+        () => {
+          setIsSent(true);
+          form.current.reset();
+          toast.success("Message sent successfully! ✅", {
+            position: "top-right",
+            autoClose: 3000,
+            theme: "dark",
+          });
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          toast.error("Failed to send message. Please try again.", {
+            position: "top-right",
+            autoClose: 3000,
+            theme: "dark",
+          });
+        }
+      );
   };
 
-  const socialItems = [
-    {
-      icon: <FaFacebook />,
-      link: "https://www.facebook.com/share/19Wr8LrPDR/",
-    },
-    {
-      icon: <FaTwitter />,
-      link: "", // No link, show as disabled
-    },
-    {
-      icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/vipul-kumar-51702929a",
-    },
-    {
-      icon: <FaInstagram />,
-      link: "https://www.instagram.com/_the__jearsey__no__13",
-    },
-    {
-      icon: <FaYoutube />,
-      link: "", // No link, show as disabled
-    },
-  ];
-
   return (
-    <footer className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw]">
-      <div className="container mx-auto text-center">
-        <h2 className="text-xl font-semibold text-purple-500">Vipul Kumar</h2>
+    <section
+      id="contact"
+      className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+    >
+      <ToastContainer />
 
-        {/* Navigation links */}
-        <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4">
-          {[
-            { name: "About", id: "about" },
-            { name: "Skills", id: "skills" },
-            { name: "Experience", id: "experience" },
-            { name: "Project", id: "projects" },
-            { name: "Education", id: "education" },
-          ].map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleScroll(item.id)}
-              className="hover:text-purple-500 text-sm sm:text-base my-1"
-            >
-              {item.name}
-            </button>
-          ))}
-        </nav>
-
-        {/* Social Media Icons */}
-        <div className="flex flex-wrap justify-center space-x-4 mt-6">
-          {socialItems.map((item, index) =>
-            item.link ? (
-              <a
-                key={index}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl hover:text-purple-500 transition-transform transform hover:scale-110"
-              >
-                {item.icon}
-              </a>
-            ) : (
-              <span
-                key={index}
-                className="text-xl text-gray-500 cursor-not-allowed opacity-50"
-                title="Link not available"
-              >
-                {item.icon}
-              </span>
-            )
-          )}
-        </div>
-        {/* Copyright text */}
-        <a className="text-sm text-gray-400 mt-6">
-          © 2025 Vipul Kumar. All rights reserved.
-        </a>
+      {/* Title Section */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-white">CONTACT</h2>
+        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
+        <p className="text-gray-400 mt-4 text-lg font-semibold">
+          I’d love to hear from you — reach out for any opportunities or
+          questions!
+        </p>
       </div>
-    </footer>
+
+      {/* Contact Info Section */}
+      <div className="text-white text-center mb-10 space-y-2">
+        <p>
+          📞 <span className="font-semibold">Phone:</span>{" "}
+          <a href="tel:8340275873" className="text-purple-400 hover:underline">
+            8340275873
+          </a>
+        </p>
+        <p>
+          💼 <span className="font-semibold">LinkedIn:</span>{" "}
+          <a
+            href="https://www.linkedin.com/in/vipul-kumar-51702929a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:underline"
+          >
+            linkedin.com/in/vipul-kumar-51702929a
+          </a>
+        </p>
+        <p>
+          📧 <span className="font-semibold">Email:</span>{" "}
+          <a
+            href="mailto:vipulkumar3885@gmail.com"
+            className="text-purple-400 hover:underline"
+          >
+            vipulkumar3885@gmail.com
+          </a>
+        </p>
+      </div>
+
+      {/* Contact Form Section */}
+      <div className="mt-4 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700">
+        <h3 className="text-xl font-semibold text-white text-center">
+          Connect With Me <span className="ml-1">🚀</span>
+        </h3>
+
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="mt-4 flex flex-col space-y-4"
+        >
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
+          />
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            required
+            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="4"
+            required
+            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-white font-semibold rounded-md hover:opacity-90 transition"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </section>
   );
 };
 
-export default Footer;
+export default Contact;
