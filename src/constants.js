@@ -107,8 +107,8 @@ export const projects = [
     description:
       "A modern, responsive personal portfolio website built using React.js to showcase projects, skills, and experience. Designed with a sleek UI and smooth animations, the portfolio highlights key accomplishments and provides visitors with an interactive way to learn more about your work. It includes project previews, a contact form, and links to social profiles and GitHub.",
     tags: ["React JS"],
-    github: "",
-    webApp: "",
+    github: "https://github.com/Vipul-kumar2002/portfolio",
+    webApp: "https://www.vipulkrportfolio.com/",
     image: port,
   },
   {
