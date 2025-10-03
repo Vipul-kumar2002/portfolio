@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Tilt from "react-parallax-tilt";
-import profileImage from "../../assets/Profile.jpg";
+import profileImage1 from "../../assets/generated-image (6).png";
 
 const About = () => {
   return (
@@ -76,7 +76,7 @@ const About = () => {
             gyroscope={true}
           >
             <img
-              src={profileImage}
+              src={profileImage1}
               alt="Vipul Kumar"
               className="w-full h-full rounded-full object-cover drop-shadow-[0_10px-20px_rgba(130,69,236,0.5)]"
             ></img>
