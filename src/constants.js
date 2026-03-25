@@ -129,7 +129,7 @@ export const projects = [
       "VibeFit is a modern online clothing store with AI-powered voice navigation and a robust Admin Panel for product, order, and customer management. It delivers a seamless shopping experience with features like secure checkout and personalized collections, blending smart technology with efficient store control.",
     tags: ["React JS", "Node.js", "MongoDB", "Express"],
     github: "https://github.com/Vipul-kumar2002/VibeFit",
-    webApp: "https://vibefit-fronttend.onrender.com/",
+    webApp: "https://vibefit-froontend.onrender.com",
     image: vibeFit,
   },
 ];
